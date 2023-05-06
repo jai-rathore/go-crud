@@ -1,0 +1,5 @@
+{
+    "port": "8080",
+    "connection_string": "jai:password@tcp(127.0.0.1:3306)/lists?parseTime=true&allowCleartextPasswords=true",
+    "environment": "DEV"
+}

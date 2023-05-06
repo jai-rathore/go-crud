@@ -1,0 +1,82 @@
+definitions:
+  models.List:
+    properties:
+      createdAt:
+        type: string
+      description:
+        type: string
+      id:
+        type: integer
+      isPublic:
+        type: boolean
+      title:
+        type: string
+      updatedAt:
+        type: string
+      userId:
+        type: integer
+    type: object
+info:
+  contact: {}
+  title: Lists Service
+  version: "1.0"
+paths:
+  /health:
+    get:
+      consumes:
+      - application/json
+      description: health check endpoint
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            type: string
+      summary: Health Check
+      tags:
+      - admin
+  /lists:
+    post:
+      consumes:
+      - application/json
+      description: create list
+      parameters:
+      - description: List
+        in: body
+        name: list
+        required: true
+        schema:
+          $ref: '#/definitions/models.List'
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/models.List'
+      summary: Create List
+      tags:
+      - lists
+  /lists/{id}:
+    get:
+      consumes:
+      - application/json
+      description: get list by id
+      parameters:
+      - description: List ID
+        in: path
+        name: id
+        required: true
+        type: integer
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/models.List'
+      summary: Get List By Id
+      tags:
+      - lists
+swagger: "2.0"
