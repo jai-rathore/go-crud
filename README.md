@@ -16,7 +16,7 @@ Squad: jaiadityarathore@gmail.com
 - `src/config` - project configurations
 - `src/config/secrets.json` - copy secrets json from fuze secrets
 - `src/config/config.json` - application config
-- `src/controllers` - api endpoints
+- `src/handler` - api endpoints
 - `src/docs` - swagger docs, need not be changed, will be updated via the make command below
 - `src/middlewares` - everything to be added to the HTTP pipeline
 - `src/services` - application / business logic
